@@ -32,6 +32,7 @@ print(
 )
 print("------------------------------------------------------------")
 
+#If settninger for å vise utfall av de forskjellige valgene.
 first_choice = input("Hvilket valg velger du (A, B, C, D)?").strip().upper()
 
 if first_choice == "A":
@@ -111,6 +112,7 @@ else:
     print("De tror du er for inkompetent for rollen som leder.")
     print(f"Du har {tillit} fra teamet og prosjektet ligger på {fremdrift}, du er en elendig leder.")
     exit()
+#Koden over altså "else" bruker en exit for å slutte koden, fordi det er egentlig "Game Over"
 
 print("-------------------------------------------------------------------")
 
@@ -166,6 +168,7 @@ print(
 input("Trykk Enter for å fortsette...")
 print("--------------------------------------------------------------")
 
+#Her sjekker koden om en eller flere av kravene er oppfylt. For å få en "halveis" god slutt på historien
 if fremdrift >= 10 and tillit >= 10:
     print("\nDu og teamet ble ferdig med prosjektet i god tid før fristen!" \
     "\nDu har hatt en demokratisk lederstil, du har klart å balansere situasjonene bra." 

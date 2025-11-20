@@ -1,145 +1,96 @@
-# -------------- Bakgrunns historie -------------------- 
+# skår system
 
-#Det har gått seks uker siden Erling, prosjektleder for utviklingen av kommunens nye digitale medborgerportal,
-# samlet sitt prosjektteam for første gang. 
-# Etter en inspirerende oppstart med høy energi, begynner samarbeidet nå å møte sine første reelle prøver. 
-# I starten var stemningen god. Gruppen opplevde høy motivasjon og fellesskap i målet 
-# om å lage en portal som kunne øke innbyggerengasjement og transparens i kommunen. 
-# Men nå, etter seks uker, har prosjektet gått inn i den klassiske storming-fasen, 
-# der ulike faglige perspektiver og personlige preferanser begynner å kollidere. 
-# Det har oppstått konflikt mellom flere parter i teamet, 
-# og du må hjelpe Erling med å velge det beste valget for å sørge for at teamet 
-# kan fikse opp i konflikten og gå videre til performing-fasen.
+Samarbeid_skåre = 0
 
+# feil input sjekk
 
+feil_input = False
 
-# --------------------- intro -------------------------------------
-print("")
-# poeng system som skal bli brukt for siste tre ulike utfall
-gode_valg = 0 
+# introduksjon og valg 1
 
-#printe ut intorduskjons tekst til bruker 
-print("Tusen takk for at du vil hjelpe Erling med å håndtere konflikter i teamet sitt")
-print("Du vil bli møtt med to alternativer, og din rolle er å velge en av de to")
-print("Målet er å hjelpe Erling å unngå å forverre konfliktene, og fokusere på å løse konfliktene")
-print(" ")
+print("Velkommen til erlings storyline")
+print("Du er prosjektleder erling og må nå ta tak i diverse konflikter for at teamet skal rekke deadlinene som nærmer seg med stormskritt")
+print("første konflikt er silje og siverts uenighet om teknologi")
+print("Du står foran to valg.")
+print ("1: ta da opp med hele teamet i fellekap")
+print("2: hold en inviduel samtale med hver av dem")
 
+valg1 = input("Skriv 1 eller 2")
 
+# sjekk for feil input og print av svar 
 
-# -------------------- konflikt mellom silje og sivert ------------
+if valg1 not in ("1", "2"):
+    feil_input = True
 
-# importere kommando, gir infor om python modul 
-import sys
-print("DEL1: Det har opstått en konflikt mellom Silje og Sivert, velg en av alternativene som vil hjelpe Erling i å løse konflikten") 
-print("Alternativ 1: Erling kan velge å ta dette opp i plenum sammen med resten av teamet")
-print("Alternativ 2: Erling kan ta individuelle samtaler med Silje og Sivert")
-
-#lagrer brukerens input i variabel valg1 
-valg1 = input("\nVelg mellom 1 eller 2") 
-
-#hvis brukeren har skrevet 1, skriver koden ut konsekvensen av dette valget
 if valg1 == "1":
-    print("Konsekvens -> Erling tar det opp i plenum. Konflikten blir synlig, og fremdriften øker. \nMen nå har et nytt konflikt mellom Hamdi og Jabir opstått")
-
-#hvis brukeren har skrevet 2, skriver koden ut konsekvensen av dette valget
+    print("du valgte å ta det opp i plenum foran hele teamet")
+    print("konsekvens: konflikten er nå synlig, men fremdriften øker")
+    Samarbeid_skåre += 1
 elif valg1 == "2":
-    print("Konsekvens -> Erling tar individuelle samtaler. Tilliten øker, men fremdriften går litt tregere. \nMen nå har et nytt konflikt mellom Hamdi og Jabir opstått")
+    print("du valgte å ta individuelle samtaler med sivert og silje hver for seg")
+    print("konsekvens: Tilliten øker, men fremdriften går litt tregere")
+    Samarbeid_skåre += 1
 
-#hvis brukeren skrev inn noe annet enn 1 eller 2 vil føre til at brukeren må prøve på nytt  
-else: 
-    print(f"du kan bare velge mellom alternativ 1 eller 2, start på nytt!")
-    sys.exit()
+# valg 2 
 
+print("du møter nå konflikt 2 mellom Hamdi og Jabir")
+print("de er uenige om hvordan kommunen skal gjennomføre digitale folkemøter")
+print("her har du også 2 valg")
+print("1: Du aventer å håper de finner ut av det selv")
+print("2: Du velge å ta en besluttning selv uten å involvere teamet")
 
+valg2 = input("skriv 1 eller 2")
 
-# ------------------- konflikt mellom Hamdi og Jabir --------------
+# sjekk for feil input og print av svar
 
-print("")
-#lagrer brukerens valg i variabel start_choice
-start_choice = input("Er du klar til å starte å løse neste konflikt? (Ja/Nei)")
+if valg2 not in ("1", "2"):
+    feil_input = True
 
-#sjekker om brukeren skrev ja 
-if start_choice == "Ja":
-    print("\nDEL2: Konflikten mellom Hamdi og Jabir handler om uenighet om hvordan inbyggerne skal kunne delta i digitale folkemøter.\nHvilket alternativ bør Erling følge??")
-    print("Alternativ 1: Erling avventer og håper på at partene finner en løsning selv")
-    print("Alternativ 2: Erling kan ta en beslutning selv uten å inkludere teamet")
-
-#sjekker om brukeren skrev nei og avslutter programmet
-elif start_choice == "Nei":
-    print("Du kan komme tilbake når du er klar!") (sys.exit())
-
-#skrev brukeren noe annet enn ja eller nei vil programmet avsluttes
-else: 
-    print("Jeg beklager, jeg tar bare imot ja/nei svar, du kan prøve på nytt")
-    sys.exit()
-
-valg2 = input("")
-#sjekker om brukeren skrev inn 1, og printer konsekvens dersom ja 
 if valg2 == "1":
-    print("Konsekvens -> Hamdi og Jabir løser konflikten, men det er klein stemning mellom partene")
-
-#sjekker om brukeren skrev inn 2 og printer ut konsekvens dersom ja 
+    print("du valgte å avente og håpe de finner ut av det selv")
+    print("konsekvens: de løser konflikten, men det er forsatt klein stemning mellom dem")
+    Samarbeid_skåre += 1
 elif valg2 == "2":
-    print("Konsekvens -> Hamdi og Jabir føler seg ikke hørt, men prosjektet har god fremdrift") 
+    print("du valgte å ta en besluttning selv uten å involvere teamet")
+    print("kosekvens: ingen av dem føler seg hørt, men prosjektet har god fremdrift")
+    Samarbeid_skåre -= 1
 
 
-# ------------------------ fraværende motivasjon -----------------------------------
-print("")
+# valg 3
 
-#spør om brukeren vil fortsette 
-start_choice = input("Etter alle konfliktene har motivasjons nivået vært fallende. vil du hjelpe til en siste gang? (Ja/Nei)")
+print("etter alt dette merker du at motivasjoen i teamet er lavere en normalt, hvordan angriper du dette?")
+print("som vanelig har du 2 valg")
+print("1: du velger å fokuser på relasjonbygging og teamfokus")
+print("2: du fokuserer på fremdrift og leveranse")
 
-#hvis ja vil informasjon om scenarioet skrives ut 
-if start_choice == "Ja":
-    print("Erling står ovenfor to alternativer han kan velge for å prøve å øke motivasjonen i teamet igjen. Hva er best i dette scenarioet?")
-    print("Alternativ 1: Erling kan velge å fokusere på relasjonsbygging og teamfokus")
-    print("Alternativ 2: Erling velger å fokusere på fremdrift og leveranse")
+valg3 = input("skriv 1 eller 2")
 
-#hvis nei vil koden avsluttes 
-elif start_choice == "Nei":
-    print("Du kan komme tilbake når du er klar!") (sys.exit())
+# sjekk for feil input og print av svar
 
-#noe annet enn ja eller nei vil føre til at brukeren må prøve på nytt  
-else: 
-    print("Jeg beklager, jeg tar bare imot ja/nei svar, du kan prøve på nytt")
-    sys.exit()
+if valg3 not in ("1", "2"):
+    feil_input = True
 
-valg3 =input("")
-
-#sjekker om brukeren skrev inn 1 og printer ut konsekvens 
-if valg2 == "1":
-    print("Konsekvens -> Bedre samarbeid og sosialt klima, men risiko for litt lavere fremdrift.")
-
-#sjekker om brukeren skrev inn 2 og printer ut konsekvens 
-elif valg2 == "2":
-    print("Konsekvens -> Prosjektet kommer videre, men teamet risikerer langvarige samarbeidsproblemer") 
-
-
-# --------------------- Konklusjon  --------------------
-
-#sjekker om brukeren gjorde godt valg i valg1
-if valg1 == "2":
-#øker telleren med en dersom det ble gjort et godt valg 
-    gode_valg += 1
-
-#sjekker om brukeren gjorde godt valg i valg2
-if valg2 == "1":
-#øker telleren med en dersom det ble gjort et godt valg 
-    gode_valg += 1
-
-#sjekker om brukeren gjorde godt valg i valg3
 if valg3 == "1":
-#øker telleren med en dersom det ble gjort et godt valg 
-    gode_valg += 1
+    print("du valgte å fokusere på relasjonsbygging og teamfokus")
+    print("konsekvens: bedre samarbeid og sosialt klima, men risiko for lavere fremdrift")
+    Samarbeid_skåre += 1
+elif valg3 == "2": 
+    print("du valgte å fokusere på fremdrift og leveranse")
+    print("konsekvens: prosjektet kommer videre, men teamet risikerer langvarige sammarbeidsproblemer")
+    Samarbeid_skåre -= 1
 
-#regner ut om gode valg er 2 eller fler 
-if gode_valg >= 2:
-    print("Teamet gjenompretter tillit og går videre til norming fasen")
+# konklusjon og resulatt utregning, samt at det vil kome feil melding ved ugyldig input, feks bokstav eller et annet tall enn 1 og 2
 
-#regner ut om gode valg er lik 1 
-elif gode_valg == 1:
-    print("Konflikten løses delvis, men relasjonen er fortsatt sårbare")
-
-#hvis brukeren ikke har gjort noen gode valg  
+if feil_input:
+    print("du har skrevt en annen verdi enn 1 eller 2 i et av valgene, vennligst clear og prøv igjen")
 else:
-    print("prosjektet mister samhold og forsinkes")
+    print("konkluson")
+    if Samarbeid_skåre < 0:
+        print("teamet fungerer dårlig og dere rekker ikke milepælen, Takk for at du spilte!")
+    elif Samarbeid_skåre == 0 or Samarbeid_skåre == 1:
+        print("teamet fungerer ok, og dere rekker akkurat milepælen, Takk for at du spilte!")
+    else:
+        print("teamet fungerer veldig godt og dere rekker milepælen, Takk for at du spilte!")  
+
+
+
